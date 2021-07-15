@@ -3,7 +3,7 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
-trigger:
+pr:
 - master
 
 pool:
@@ -34,3 +34,13 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
+  
+- script: |
+    print('Hello world 1')
+    print('Hello world 2')
+    displayName: 'hello'
+
+- script: |
+    python -m pip install flake8
+    flake8 .
+    displayName: 'Run lint tests'
