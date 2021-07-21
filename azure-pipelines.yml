@@ -38,7 +38,3 @@ steps:
 - script: |
     echo 'Hello world 1'
     echo 'Hello world 2'
-
-- script: |
-    python -m pip install flake8
-    flake8 .
